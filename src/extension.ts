@@ -70,6 +70,7 @@ function ParseToInt(x_str: string){
 		x_str - вводимое строковое значени
 	Выходные данные:
 		x - десятичное число
+		
 	*/
 	const x = parseInt(x_str, 10);
 	return x;
