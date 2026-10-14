@@ -100,8 +100,8 @@ function GenerateCode(branch: boolean, x: number, y: number, result: number[]){
 	templates.set(
 		'while',
 	`
-let i = ${x};
-while (i <= ${y}){
+let i${y} = ${x};
+while (i${y} <= ${y}){
 	console.log(i*i);
 	++i;
 }
