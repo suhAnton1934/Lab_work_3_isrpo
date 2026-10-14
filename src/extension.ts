@@ -147,25 +147,25 @@ function GenerateCode(branch: boolean, x: number, y: number, result: number[]){
 	templates.set(
 		'while',
 	`
-let i = ${x};
+int i = ${x};
 while (i <= ${y}){
-	console.log(i*i);
+	std::cout << i * i << std::endl;
 	++i;
 }
 // Сгенерировано чисел: ${result.length}
 
-const arr${y} = [${result.join(', ')}];		
+int arr${y}[] = {${result.join(', ')}};		
 `
 	);
 	templates.set(
 		'for',
 		`
-for (let i = ${y}; i <= ${x}; ++i){			
-	console.log(i*i*i);
+for (int i = ${y}; i <= ${x}; ++i){			
+	std::cout << i*i*i << std::endl;
 }
 // Сгенерировано чисел: ${result.length}
 		
-const arr${y} = [${result.join(', ')}];
+int arr${y}[] = {${result.join(', ')}};
 `
 	);
 
@@ -203,3 +203,4 @@ async function InsertCodeIntoEditor(code: string){
 }
 
 export function deactivate() {}
+
