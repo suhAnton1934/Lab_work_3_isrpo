@@ -147,10 +147,11 @@ function GenerateCode(branch: boolean, x: number, y: number, result: number[]){
 	templates.set(
 		'while',
 	`
-int i = ${x};
-while (i <= ${y}){
-	std::cout << i * i << std::endl;
-	++i;
+
+let i${y} = ${x};
+while (i${y} <= ${y}){
+	numbers.push(i${y} * i${y});
+	++i${y};
 }
 // Сгенерировано чисел: ${result.length}
 
@@ -160,8 +161,8 @@ int arr${y}[] = {${result.join(', ')}};
 	templates.set(
 		'for',
 		`
-for (int i = ${y}; i <= ${x}; ++i){			
-	std::cout << i*i*i << std::endl;
+for (let i${y} = ${y}; i${y} <= ${x}; ++i${y}){			
+	numbers.push(i${y} * i${y} * i${y});
 }
 // Сгенерировано чисел: ${result.length}
 		
